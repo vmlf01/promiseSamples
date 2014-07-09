@@ -1,0 +1,19 @@
+<div class="page-header">
+	<h1><small>{{ sample.name }}</small> {{ sample.desc }}</h1>
+</div>
+<table class="table table-striped">
+	<thead>
+		<th>Index</th>	
+		<th>Message</th>	
+	</thead>
+	<tbody>
+		<tr ng-repeat="msg in sample.messages">
+			<td class="h3">{{ msg.index }}</td>
+			<td class="h3">{{ msg.message }}</td>
+		</tr>	
+	</tbody>
+</table>
+
+<p class="well h1 text-info" ng-show="sample.notes">
+	{{ sample.notes }}
+</p>

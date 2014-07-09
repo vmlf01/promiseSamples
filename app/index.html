@@ -1,0 +1,85 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css({.tmp,app}) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+</head>
+<body ng-app="promiseSamplesApp">
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-sm-4 samples-menu" ng-controller="samplesMenuController as menu">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p class="panel-title">
+					<a href="#">promises</a>
+					<br/>
+					<h3>The Tao of Angular</h3>
+					</p>
+				</div>
+				<div class="list-group">
+					<a class="list-group-item" ng-repeat="sample in menu.samples" 
+						ng-href="{{ sample.href }}" ng-class="{ active: menu.isActive(sample) }">
+						<h4>{{ sample.name }}</h4>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Add your site or application content here -->
+		<div class="col-sm-8 samples-container" ng-view=""></div>
+	</div>
+	<!--[if lt IE 9]>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/json3/lib/json3.min.js"></script>
+	<![endif]-->
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/models/PromiseSample.js"></script>
+	<script src="scripts/models/LogMessage.js"></script>
+	<script src="scripts/services/LogService.js"></script>
+	<script src="scripts/services/SamplesService.js"></script>
+	<script src="scripts/controllers/samplesMenuController.js"></script>
+	<script src="scripts/controllers/sample01Controller.js"></script>
+	<script src="scripts/controllers/sample02Controller.js"></script>
+	<script src="scripts/controllers/sample03Controller.js"></script>
+	<script src="scripts/controllers/sample04Controller.js"></script>
+	<script src="scripts/controllers/sample05Controller.js"></script>
+	<script src="scripts/controllers/sample06Controller.js"></script>
+	<script src="scripts/controllers/sample07Controller.js"></script>
+	<script src="scripts/controllers/sample08Controller.js"></script>
+	<script src="scripts/controllers/sample09Controller.js"></script>
+	<script src="scripts/controllers/sample10Controller.js"></script>
+	<script src="scripts/controllers/sample11Controller.js"></script>
+	<script src="scripts/controllers/sample12Controller.js"></script>
+	<script src="scripts/controllers/sample13Controller.js"></script>
+	<script src="scripts/controllers/sample14Controller.js"></script>
+	<script src="scripts/controllers/sample15Controller.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
