@@ -10,11 +10,20 @@ angular.module('promiseSamplesApp')
 			sample.name = 'Sample 7';
 			sample.desc = 'callback passthru';
 			sample.messages = LogService.messages;
+			sample.notes = "promises will go on through the method chain \
+							until the required callback is found. \
+							In the first example, an error is thrown causing \
+							its promise to fail and the next two onFulfilled \
+							callback to be skipped. <br/> \
+							In the second example promise chain, we define a \
+							catch block which is skipped because the error is \
+							not thrown and execution continues on the next \
+							onFulfilled callback.";
 
 			LogService.log('sample 7 started');
 
 			// promises will go on through the method chain until the 
-			// required callback if specified
+			// required callback, if specified
 			// 
 			// in this case, we throw an error which will look for the
 			// next onReject/catch callback

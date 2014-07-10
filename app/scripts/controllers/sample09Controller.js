@@ -10,6 +10,12 @@ angular.module('promiseSamplesApp')
 			sample.name = 'Sample 9';
 			sample.desc = 'callbacks can return promises';
 			sample.messages = LogService.messages;
+			sample.notes = "When a callback returns a promise \
+							$q will wait for that promise to resolve \
+							before proceding. The state of the promise \
+							will determine which callback will be \
+							executed next. It is just like if there was another \
+							promise in the chain.";
 
 			LogService.log('sample 9 started');
 
