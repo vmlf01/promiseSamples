@@ -14,7 +14,7 @@ angular.module('promiseSamplesApp')
 							until the required callback is found. \
 							In the first example, an error is thrown causing \
 							its promise to fail and the next two onFulfilled \
-							callback to be skipped. <br/> \
+							callback to be skipped. \
 							In the second example promise chain, we define a \
 							catch block which is skipped because the error is \
 							not thrown and execution continues on the next \
