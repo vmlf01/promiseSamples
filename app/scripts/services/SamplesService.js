@@ -5,13 +5,13 @@ angular.module('promiseSamplesApp')
 		function ($q, $timeout) {
 
 			this.aSimplePromise = function () {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
-				deferedTask.resolve(
+				deferredTask.resolve(
 					'I always keep my promises!'
 				);
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			}
 
 			this.delay = function (milliseconds) {
@@ -21,28 +21,28 @@ angular.module('promiseSamplesApp')
 			};
 
 			this.promiseStatesDontChange = function () {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
-				deferedTask.reject(
+				deferredTask.reject(
 					"I'm sorry, Dave. I'm afraid I can't do that."
 				);
 
-				deferedTask.resolve(
+				deferredTask.resolve(
 					"Alright, HAL. I'll go in through the emergency airlock."
 				);
 
-				deferedTask.reject(
+				deferredTask.reject(
 					"Dave, this conversation can serve no purpose anymore. Goodbye."
 				);
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			};
 
 			this.getListOfStuff = function() {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
 				$timeout(function() {
-					deferedTask.resolve([
+					deferredTask.resolve([
 						'first thing',
 						'something',
 						'something else',
@@ -50,30 +50,30 @@ angular.module('promiseSamplesApp')
 						]);
 				}, 2000);
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			};
 
 			this.getListOfStuffTimedOut = function() {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
 				$timeout(function() {
-					deferedTask.reject('Looks like server could not be reached!');
+					deferredTask.reject('Looks like server could not be reached!');
 				}, 2000);
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			};
 
 			this.getFirstItem = function(items) {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
 				if (items && items[0]) {
-					deferedTask.resolve(items[0]);
+					deferredTask.resolve(items[0]);
 				}
 				else {
-					deferedTask.reject('No items available');
+					deferredTask.reject('No items available');
 				}
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			}
 
 			this.aNumberPromise = function(value) {
@@ -81,21 +81,21 @@ angular.module('promiseSamplesApp')
 			};
 
 			this.numberOfTheBeastPromise = function() {
-				var deferedTask = $q.defer();
+				var deferredTask = $q.defer();
 
-				deferedTask.notify('I am not a number!');
+				deferredTask.notify('I am not a number!');
 
 				$timeout(function() {
-					deferedTask.notify('I am not a number!');
-					deferedTask.notify('I am not a number!');
-					deferedTask.notify('I am not a number!');
+					deferredTask.notify('I am not a number!');
+					deferredTask.notify('I am not a number!');
+					deferredTask.notify('I am not a number!');
 
 					$timeout(function() {
-						deferedTask.resolve('You are number 2');
+						deferredTask.resolve('You are number 2');
 					}, 1000);
 				}, 1000);
 
-				return deferedTask.promise;
+				return deferredTask.promise;
 			}
 
 			this.bonusTrack = function() {
